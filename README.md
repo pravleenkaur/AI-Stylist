@@ -21,15 +21,13 @@ Before running the application, ensure you have the following installed:
 
 Follow these steps to run the AI Stylist Prototype:
 
-### `ai-stylist-frontend`
+## ai-stylist-frontend
 
-# `Starts the frontend node server`
+#### Navigate to frontend directory
+`cd ai-stylist-frontend`
 
-# `Navigate to frontend directory`
-cd ai-stylist-frontend
-
-# `Start the React development server`
-npm start
+#### Start the React development server
+`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -38,26 +36,25 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-### `ai-stylist-backend`
+## ai-stylist-backend
 
-# `Starts the backend node server`
+#### Navigate to backend directory
+`cd ai-stylist-backend`
 
-# `Navigate to backend directory`
-cd ai-stylist-backend
+#### Start the Node.js server
+`node server.js`
 
-# `Start the Node.js server`
-node server.js
+## Database Setup
 
-### `Database Setup`
-# `Navigate to backend directory`
-cd ai-stylist-backend
+#### Navigate to backend directory
+`cd ai-stylist-backend`
 
-# `Initialize SQLite database (optional for memory storage)`
-sqlite3 database.sqlite3
+#### Initialize SQLite database (optional for memory storage)
+`sqlite3 database.sqlite3`
 
-# `Create necessary tables (if not already created)`
-CREATE TABLE IF NOT EXISTS users (
+#### Create necessary tables (if not already created)
+`CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   preferences TEXT
-);
+);`
