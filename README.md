@@ -21,7 +21,17 @@ Before running the application, ensure you have the following installed:
 
 Follow these steps to run the AI Stylist Prototype:
 
-## ai-stylist-frontend
+## Install Dependencies
+
+#### Install backend dependencies
+`cd ai-stylist-backend
+npm install`
+
+#### Install frontend dependencies
+`cd ../ai-stylist-frontend
+npm install`
+
+## AI-Stylist-frontend
 
 #### Navigate to frontend directory
 `cd ai-stylist-frontend`
@@ -36,7 +46,7 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-## ai-stylist-backend
+## AI-Stylist-backend
 
 #### Navigate to backend directory
 `cd ai-stylist-backend`
