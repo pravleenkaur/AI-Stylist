@@ -14,7 +14,6 @@ const ProductsPage = () => {
       const response = await axios.post('http://localhost:5001/api/recommendations', {
         preferences: [preferences], // Wrap preferences in an array if it's a single object
       });
-      // console.log("kawal", response.data);
       // Update state with recommended products
       setRecommendedProducts(response.data);
     } catch (error) {
