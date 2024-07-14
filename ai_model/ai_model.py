@@ -1,29 +1,54 @@
 import sys
-import numpy as np
-from sklearn.neighbors import NearestNeighbors
+import json
 
-# Sample data: Users' preferences (e.g., color, style)
-user_preferences = np.array([
-    [1, 0, 0],  # User 1: prefers color 1, not 2 or 3
-    [0, 1, 0],  # User 2: prefers color 2, not 1 or 3
-    [0, 0, 1],  # User 3: prefers color 3, not 1 or 2
-])
+def analyze_preferences(preferences_list):
+    # Dummy implementation of fetch_products
+    filtered_products = []
+    for preferences in preferences_list:
+        filtered_products.extend(fetch_products(preferences))
+    return filtered_products
 
-def recommend(preference):
-    # Convert preference list to numpy array if needed
-    preference_array = np.array(preference).reshape(1, -1)  # Reshape to ensure it's 2D
+def fetch_products(preferences):
+    # Dummy data for illustration
+    products = [
+        {'gender': 'female', 'name': 'Red Dress', 'description': 'Beautiful red dress', 'image_url': 'https://media.istockphoto.com/id/1217970889/photo/beautiful-female-red-dress-without-sleeves-isolated-on-white-evening-dress.jpg?s=612x612&w=0&k=20&c=SV4eWKwIY-HsUkrCi6X2jApUBcC5-lKFSd_tKG5Ewcw=', 'price': 50.0, 'color': 'red', 'category': 'dress', 'size': 'medium'},
+        {'gender': 'female', 'name': 'Red Dress', 'description': 'ugly red dress', 'image_url': 'https://example.com/red_dress1.jpg', 'price': 90.0, 'color': 'red', 'category': 'dress', 'size': 'medium'},
+        {'gender': 'male', 'name': 'Blue Shirt', 'description': 'Comfortable blue shirt', 'image_url': 'https://example.com/blue_shirt.jpg', 'price': 25.0, 'color': 'blue', 'category': 'shirt', 'size': 'large'},
+        # Add more products as needed
+    ]
 
-    model = NearestNeighbors(n_neighbors=1)
-    model.fit(user_preferences)
-    _, indices = model.kneighbors(preference_array)
-    return indices[0][0]
+    # Example filtering based on preferences
+    filtered_products = []
+    for product in products:
+        match = True
+        for key, value in preferences.items():
+            if product.get(key) != value:
+                match = False
+                break
+        if match:
+            filtered_products.append(product)
+    
+    return filtered_products if filtered_products else products
 
 if __name__ == '__main__':
-    # Ensure preference input from command line arguments
-    if len(sys.argv) != 4:
-        print("Usage: python ai_model.py <preference1> <preference2> <preference3>")
-        sys.exit(1)
+    try:
+        # Read preferences from standard input (usually provided by Node.js subprocess)
+        preferences_json = sys.stdin.read().strip()
+        preferences_list = json.loads(preferences_json)
+        
+        # Ensure preferences_list is a list of dictionaries
+        if not isinstance(preferences_list, list):
+            raise ValueError("Input preferences should be a list of dictionaries")
+        
+        # Analyze preferences and fetch products
+        recommended_products = analyze_preferences(preferences_list)
+        
+        # Output recommended products as JSON
+        print(json.dumps(recommended_products))
     
-    preference = [int(x) for x in sys.argv[1:4]]
-    recommendation = recommend(preference)
-    print(f"Recommendation for the new user: User {recommendation + 1}")
+    except json.JSONDecodeError as e:
+        print("Error parsing JSON:", str(e))
+        sys.exit(1)
+    except ValueError as ve:
+        print("ValueError:", str(ve))
+        sys.exit(1)

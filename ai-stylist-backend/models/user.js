@@ -1,14 +1,10 @@
 // models/user.js
+const mongoose = require('mongoose');
 
-const db = require('../db'); // Ensure this points to your SQLite connection
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+});
 
-class User {
-    static create(name, email, callback) {
-        db.run('INSERT INTO users (name, email) VALUES (?, ?)', [name, email], function(err) {
-            if (err) return callback(err);
-            callback(null, { id: this.lastID, name, email });
-        });
-    }
-}
-
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);
