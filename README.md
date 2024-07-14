@@ -53,8 +53,3 @@ You may also see any lint errors in the console.
 
 #### Start the Node.js server
 `node server.js`
-
-## Database Setup
-
-#### Navigate to backend directory
-`cd ai-stylist-backend`
