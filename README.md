@@ -58,13 +58,3 @@ You may also see any lint errors in the console.
 
 #### Navigate to backend directory
 `cd ai-stylist-backend`
-
-#### Initialize SQLite database (optional for memory storage)
-`sqlite3 database.sqlite3`
-
-#### Create necessary tables (if not already created)
-`CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT,
-  preferences TEXT
-);`
