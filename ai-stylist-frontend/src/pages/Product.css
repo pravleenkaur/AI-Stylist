@@ -1,0 +1,11 @@
+/* Center the text and adjust its color and width */
+.product-page-heading{
+    text-align: center; /* Center align the text */
+    color: white; /* Change text color */
+    width: 40rem; /* Adjust width in rem units */
+    margin: 0 auto; /* Center the element horizontally */
+    margin-bottom: 20px;
+    font-size: 7vh;
+}
+
+  

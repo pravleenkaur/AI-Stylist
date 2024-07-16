@@ -1,0 +1,77 @@
+/* Container for the product list */
+.product-list-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styling for the heading */
+  .product-list-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Center the heading */
+  }
+  
+  /* Styling for the unordered list */
+  .product-list-container ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+    margin: 0;
+    display: grid; /* Use grid layout for responsive design */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+    width: 100%;
+    max-width: 1200px; /* Limit max width for better readability */
+  }
+  
+  /* Styling for individual product cards */
+  .product-list-container li {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  }
+  
+  /* Hover effect for product cards */
+  .product-list-container li:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Styling for product images */
+  .product-list-container img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for product names */
+  .product-list-container h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  /* Styling for product descriptions */
+  .product-list-container p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Styling for price and category */
+  .product-list-container p.price, .product-list-container p.category {
+    font-weight: bold;
+    color: #333;
+  }
+  

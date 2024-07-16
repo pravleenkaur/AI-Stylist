@@ -1,0 +1,53 @@
+/* Home.css */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .gradient-background {
+    background: linear-gradient(300deg, #e0aaff, #a7a5d5, #fda4b6, #ff79c6);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .hero {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .btn-primary {
+    background-color: #ff79c6;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  
+  .btn-primary:hover{
+    background-color: #f94cae;
+  }
+  
