@@ -1,4 +1,4 @@
-# AI Stylist Prototype
+# Personal Stylist
 
 The AI Stylist Prototype is an application that provides personalized fashion recommendations based on user preferences using AI technology.
 
