@@ -1,12 +1,12 @@
 # Personal Stylist
 
-The AI Stylist Prototype is an application that provides personalized fashion recommendations based on user preferences using AI technology.
+The Personal Stylist is an application that provides personalized fashion recommendations based on user preferences.
 
 ## Features
 
 - **User Registration**: Users can register with their name and fashion preferences.
-- **Personalized Recommendations**: AI generates outfit recommendations based on user preferences.
-- **Interactive UI**: Simple and intuitive user interface to interact with the AI Stylist.
+- **Personalized Recommendations**:  generates outfit recommendations based on user preferences.
+- **Interactive UI**: Simple and intuitive user interface to interact with the Personal Stylist.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ npm install`
 `cd ../ai-stylist-frontend
 npm install`
 
-## AI-Stylist-frontend
+## Personal-Stylist-frontend
 
 #### Navigate to frontend directory
 `cd ai-stylist-frontend`
@@ -46,7 +46,7 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-## AI-Stylist-backend
+## Personal-Stylist-backend
 
 #### Navigate to backend directory
 `cd ai-stylist-backend`
